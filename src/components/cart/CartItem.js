@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function CartItem(props) {
   const { item } = props
+  const handleOnClick = () => {}
   return (
     <div>
       <img src={item.img} alt=''></img>
