@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+
+import './App.css'
+import CartItem from './components/cart/CartItem'
 
 function App() {
+  const [items, setItems] = useState([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1> Your bag </h1>
+      {items.length === 0
+        ? ''
+        : items.map((item, index) => {
+            return <CartItem key={index} item={item} />
+          })}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
